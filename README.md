@@ -1,1 +1,2 @@
-# kmp-sort
+# kmp-string-matching
+
