@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+
 void kmpMatching(char *text, char *word) {
 	int failTable[strlen(word)];
 	failTable[0] = 0;
@@ -23,7 +24,7 @@ void kmpMatching(char *text, char *word) {
 
 	for(int i = 0, j = 0; i < strlen(text); i++) {
 		if(j == strlen(word)) {
-			printf("%d mornoos %d mor hurtel oldov\n", i - j, i);
+			printf("found the word in index %d to %d \n", i - j, i);
 			return;
 		}
 		if(text[i] == word[j])
@@ -35,5 +36,5 @@ void kmpMatching(char *text, char *word) {
 }
 
 int main() {
-	kmpMatching("BC ABCDAB ABCDABCDABDE", "BC");
+	kmpMatching("BC ABCDAB ABCDABCDABDE", "BCD");
 }
